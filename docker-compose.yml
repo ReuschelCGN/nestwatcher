@@ -1,0 +1,29 @@
+version: '2.4'
+services:
+  ofelia:
+    image: mcuadros/ofelia:latest
+    restart: always
+    command: daemon --docker
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+
+  nestwatcher:
+    container_name: nestwatcher
+    build: ./nestwatcher
+    tty: true
+    restart: always
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./nestwatcher/config/:/usr/src/app/config/
+      - ./nestwatcher/data/area_data/:/usr/src/app/data/area_data/
+      - ./nestwatcher/data/db_data/:/usr/src/app/data/db_data/
+      - ./nestwatcher/data/osm_data/:/usr/src/app/data/osm_data/
+    labels:
+      ofelia.enabled: "true"
+      ofelia.job-exec.nestwatcher.schedule: "@every 60m"
+      ofelia.job-exec.nestwatcher.command: "python3 nests.py"
+    depends_on: 
+      - rocketdb
+    networks:
+        - default
