@@ -2,6 +2,7 @@ version: '2.4'
 services:
   ofelia:
     image: mcuadros/ofelia:latest
+    container_name: ofelia
     restart: always
     command: daemon --docker
     volumes:
