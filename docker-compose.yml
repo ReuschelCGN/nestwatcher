@@ -24,5 +24,3 @@ services:
       ofelia.enabled: "true"
       ofelia.job-exec.nestwatcher.schedule: "@every 60m"
       ofelia.job-exec.nestwatcher.command: "python3 nests.py"
-    networks:
-        - default
