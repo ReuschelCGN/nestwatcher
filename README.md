@@ -22,4 +22,5 @@ A Program to analyze nests in your area, save it to a database and send Discord 
 - and for edit nestnames:
    - `docker exec -it nestwatcher /bin/sh`
    - `python3 tools.py`
-([Wiki-Nestnames](https://ccev.github.io/nestwatcher/tools/renaming-nests.html)
+
+([Wiki-Nestnames](https://ccev.github.io/nestwatcher/tools/renaming-nests.html))
