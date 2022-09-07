@@ -201,7 +201,7 @@ for area in full_areas:
 
 if len(discord_message_data) > 0:
     log.info("Logging into Discord")
-    bot = discord.Client()
+    bot = discord.Client(intents=discord.Intents.default())
 
     @bot.event
     async def on_ready():
