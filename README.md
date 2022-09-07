@@ -10,11 +10,11 @@ A Program to analyze nests in your area, save it to a database and send Discord 
 - Copy content of `docker-compose.yml` into your running `docker-compose.yml`
 - Rename folder `config_example` to `config` and fill out the files:
    - `areas.json`
-   - `config.ini`
-   - `discord.json`
-   - `settings.json`
-(look here for Info: [Wiki](https://ccev.github.io/nestwatcher/))
+   - `config.ini` 
 (config.ini in this Version only works with UIcon Repos for `icon_repo` and also on Tileserver Template)
+   - `discord.json`
+   - `settings.json` 
+(look here for Info: [Wiki](https://ccev.github.io/nestwatcher/))
 - Add NestWatcher Template `nests.json` to your Tileserver.
 - Add NestWatcher DB Table from SQL Folder to your DB (nests.sql & -> update.sql)
 then run:
