@@ -18,7 +18,7 @@ A Program to analyze nests in your area, save it to a database and send Discord 
 - Add NestWatcher DB Table from SQL Folder to your DB (nests.sql & -> update.sql)
 then run:
 - `docker-compose build nestwatcher`
-- `docker-compose up -d nestwatcher``
+- `docker-compose up -d nestwatcher`
 and for edit nestnames:
 - `docker exec -it nestwatcher /bin/sh`
 - `python3 tools.py`
