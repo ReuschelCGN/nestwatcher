@@ -1,6 +1,6 @@
 # Basic Docker image for NestWatcher
 
-FROM python:3.7-slim
+FROM python:3.8-slim
 
 RUN export DEBIAN_FRONTEND=noninteractive && apt-get update \
 && apt-get install -y --no-install-recommends
