@@ -38,7 +38,7 @@ if wanted == "1":
     areaname = input("Area: ")
     print("Starting the bot now. Please write 'start' and follow your bot's instructions.")
 
-    bot = discord.Client()
+    bot = discord.Client(intents=discord.Intents.default())
     @bot.event
     async def on_message(message):
         if not message.content == "start":
@@ -366,7 +366,7 @@ elif wanted == "4":
     if confirm == "n":
         sys.exit()
 
-    bot = discord.Client()
+    bot = discord.Client(intents=discord.Intents.default())
     @bot.event
     async def on_ready():
         for guild in bot.guilds:
