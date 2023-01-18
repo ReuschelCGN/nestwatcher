@@ -30,10 +30,10 @@ def timestr_to_datetime(time):
     return datetime.strptime(time, "%Y-%m-%d %H:%M")
 
 # Auto migration time
-events = requests.get("https://raw.githubusercontent.com/ccev/pogoinfo/v2/active/events.json").json()
+events = requests.get("https://raw.githubusercontent.com/ReuschelCGN/pogoinfo/v2/active/events.json").json()
 hours_since_migration = False
 if config.auto_time:
-    last_migration_timestamp = requests.get("https://raw.githubusercontent.com/ccev/pogoinfo/info/last-nest-migration").text
+    last_migration_timestamp = requests.get("https://raw.githubusercontent.com/ReuschelCGN/pogoinfo/info/last-nest-migration").text
     last_migration = datetime.fromtimestamp(int(last_migration_timestamp))
     last_regular_migration = last_migration
 
@@ -126,7 +126,7 @@ for setting in settings:
 
 event_mons = set()
 if config.use_events:
-    events = requests.get("https://raw.githubusercontent.com/ccev/pogoinfo/v2/active/events.json").json()
+    events = requests.get("https://raw.githubusercontent.com/ReuschelCGN/pogoinfo/v2/active/events.json").json()
     for event in events:
         if "season" in event["name"].lower():
             continue
@@ -149,7 +149,7 @@ if config.use_events:
 # Getting nesting species
 
 #nesting_mons = requests.get("https://pogoapi.net/api/v1/nesting_pokemon.json").json().keys()
-nesting_mons = requests.get("https://raw.githubusercontent.com/ccev/pogoinfo/v2/nests/species-ids.json").json()
+nesting_mons = requests.get("https://raw.githubusercontent.com/ReuschelCGN/pogoinfo/v2/nests/species-ids.json").json()
 nesting_mons = nesting_mons.get(config.hemisphere, nesting_mons["all"])
 nesting_mons = [str(m) for m in nesting_mons]
 nest_mons = [m for m in nesting_mons if m not in event_mons]
